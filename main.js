@@ -1,3 +1,8 @@
-const foo = 123;
+const useGetUser = (userId: string, applicationDate: Date) => useQuery({
+  queryFn: () => {
+      return db.users.get({ where: ({ id, date }) => userId === id && date <= applicationDate });
+  },
+  queryKey: ["getuser"]
+});
 
-console.log(foo);
+const {isLoading, data, isSuccess, error} = useGetUser();
