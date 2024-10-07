@@ -10,6 +10,7 @@ on:
 jobs:
   code-review:
     name: ChatGPT Code Review
+    runs-on: ubuntu-latest
     steps:
       - name: GenAI Code Review
         uses: cirolini/genai-code-review@v2
